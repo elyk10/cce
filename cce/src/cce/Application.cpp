@@ -1,4 +1,8 @@
+#include "ccepch.h"
 #include "Application.h"
+
+#include "Events/ApplicationEvent.h"
+#include "cce/Log.h"
 
 namespace Cce
 {
@@ -14,6 +18,9 @@ namespace Cce
 
 	void Application::Run()
 	{
+		WindowResizeEvent e(1280, 720);
+		CCE_TRACE(e.toString());
+		
 		while (true);
 	}
 }

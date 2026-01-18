@@ -18,6 +18,9 @@ project "cce"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "ccepch.h"
+    pchsource "cce/src/ccepch.cpp"
+
     files
     {
         "%{prj.name}/src/**.h",
@@ -26,6 +29,7 @@ project "cce"
 
     includedirs
     {
+        "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include"
     }
 
@@ -57,6 +61,9 @@ project "cce"
     filter "configurations:Dist"
         defines "CCE_DIST"
         optimize "On"
+
+    filter "system:windows"
+        buildoptions "/utf-8"
 
 project "Sandbox"
     location "Sandbox"
@@ -104,5 +111,8 @@ project "Sandbox"
     filter "configurations:Dist"
         defines "CCE_DIST"
         optimize "On"
+
+    filter "system:windows"
+        buildoptions "/utf-8"
 
 

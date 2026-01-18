@@ -4,6 +4,9 @@
     <Filter Include="cce">
       <UniqueIdentifier>{3065880B-9C6E-887C-25EA-9E7C91F2937C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="cce\Events">
+      <UniqueIdentifier>{145B52D3-0013-9420-691A-6D7C55F12E11}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Cce.h" />
@@ -16,9 +19,22 @@
     <ClInclude Include="src\cce\EntryPoint.h">
       <Filter>cce</Filter>
     </ClInclude>
+    <ClInclude Include="src\cce\Events\ApplicationEvent.h">
+      <Filter>cce\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cce\Events\Event.h">
+      <Filter>cce\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cce\Events\KeyEvent.h">
+      <Filter>cce\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cce\Events\MouseEvent.h">
+      <Filter>cce\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\cce\Log.h">
       <Filter>cce</Filter>
     </ClInclude>
+    <ClInclude Include="src\ccepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cce\Application.cpp">
@@ -27,5 +43,6 @@
     <ClCompile Include="src\cce\Log.cpp">
       <Filter>cce</Filter>
     </ClCompile>
+    <ClCompile Include="src\ccepch.cpp" />
   </ItemGroup>
 </Project>

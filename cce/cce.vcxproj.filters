@@ -35,6 +35,10 @@
       <Filter>cce</Filter>
     </ClInclude>
     <ClInclude Include="src\ccepch.h" />
+    <ClInclude Include="src\cce\Window.h">
+      <Filter>cce</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cce\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cce\Application.cpp">
@@ -44,5 +48,6 @@
       <Filter>cce</Filter>
     </ClCompile>
     <ClCompile Include="src\ccepch.cpp" />
+    <ClCompile Include="src\cce\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

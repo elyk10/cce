@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "cce/Log.h"
+
 
 #ifdef CCE_PLATFORM_WINDOWS
 #include <Windows.h>

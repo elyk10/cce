@@ -50,7 +50,7 @@ namespace Cce
 		{
 			return getCategoryFlags() & category;
 		}
-	protected:
+	//protected:
 		bool m_Handled = false;
 	};
 
@@ -80,9 +80,14 @@ namespace Cce
 		
 	};
 
-	inline std::ostream& operator<<(std::ostream& os, const Event& e)
+	/*inline std::ostream& operator<<(std::ostream& os, const Event& e)
 	{
 		return os << e.toString();
+	}*/
+
+	inline std::string format_as(const Event& e)
+	{
+		return e.toString();
 	}
 
 }

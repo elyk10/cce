@@ -2,6 +2,7 @@
 
 #include "Core.h"
 #include "Events/Event.h"
+#include "Events/ApplicationEvent.h"
 #include "Window.h"
 
 
@@ -15,7 +16,11 @@ namespace Cce {
 
 		void Run();
 
+		void onEvent(Event& e);
+
 	private:
+		bool onWindowClose(WindowCloseEvent& e);
+
 		std::unique_ptr<Window> m_Window;
 
 		bool m_Running = true;

@@ -19,12 +19,31 @@ namespace Cce
 
 	}
 
+	void Application::pushLayer(Layer* layer)
+	{
+		m_LayerStack.pushLayer(layer);
+	}
+
+	void Application::pushOverlay(Layer* layer)
+	{
+		m_LayerStack.pushOverlay(layer);
+	}
+
 	void Application::onEvent(Event& e)
 	{
 		EventDispatcher dispatcher(e);
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(onWindowClose));
 		
-		CCE_CORE_TRACE("{0}", e);
+		
+		CCE_CORE_TRACE("{0}", e.toString());
+		
+		for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
+		{
+			(*--it)->onEvent(e);
+			if (e.m_Handled)
+				break;
+		}
+		
 	}
 
 
@@ -32,6 +51,11 @@ namespace Cce
 	{
 		while (m_Running)
 		{
+			for (Layer* layer : m_LayerStack)
+			{
+				layer->onUpdate();
+			}
+
 			m_Window->onUpdate();
 		}
 	}
@@ -39,7 +63,6 @@ namespace Cce
 	bool Application::onWindowClose(WindowCloseEvent& e)
 	{
 		m_Running = false;
-		std::cout << "hellow" << std::endl;
 		return true;
 	}
 }

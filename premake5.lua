@@ -13,8 +13,10 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "cce/vendor/GLFW/include"
+IncludeDir["Glad"] = "cce/vendor/Glad/include"
 
 include "cce/vendor/GLFW"
+include "cce/vendor/Glad"
 
 project "cce"
     location "cce"
@@ -37,12 +39,14 @@ project "cce"
     {
         "%{prj.name}/src",
         "%{prj.name}/vendor/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}"
     }
 
     links
     {
         "GLFW",
+        "Glad",
         "opengl32.lib"
     }
 
@@ -55,7 +59,7 @@ project "cce"
         {
             "CCE_PLATFORM_WINDOWS",
             "CCE_BUILD_DLL",
-
+            "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands
@@ -65,14 +69,17 @@ project "cce"
     
     filter "configurations:Debug"
         defines "CCE_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "CCE_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         defines "CCE_DIST"
+        buildoptions "/MD"
         optimize "On"
 
     filter "system:windows"
@@ -115,14 +122,17 @@ project "Sandbox"
 
     filter "configurations:Debug"
         defines "CCE_DEBUG"
+        buildoptions "/MDd"
         symbols "On"
 
     filter "configurations:Release"
         defines "CCE_RELEASE"
+        buildoptions "/MD"
         optimize "On"
 
     filter "configurations:Dist"
         defines "CCE_DIST"
+        buildoptions "/MD"
         optimize "On"
 
     filter "system:windows"

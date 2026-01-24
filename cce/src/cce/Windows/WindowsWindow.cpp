@@ -5,6 +5,8 @@
 #include "cce/Events/KeyEvent.h"
 #include "cce/Events/ApplicationEvent.h"
 
+#include <glad/glad.h>
+
 namespace Cce
 {
 	static bool s_GLFWInitialized = false;
@@ -49,6 +51,8 @@ namespace Cce
 
 		m_Window = glfwCreateWindow((int)props.width, (int)props.height, m_Data.title.c_str(), nullptr, nullptr);
 		glfwMakeContextCurrent(m_Window);
+		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+		CCE_CORE_ASSERT(status, "Failedto initialize glad");
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		setVSync(true);
 

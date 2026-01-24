@@ -7,6 +7,9 @@
     <Filter Include="cce\Events">
       <UniqueIdentifier>{145B52D3-0013-9420-691A-6D7C55F12E11}</UniqueIdentifier>
     </Filter>
+    <Filter Include="cce\Windows">
+      <UniqueIdentifier>{6A3F8089-D6F4-F87E-5FE9-F255CB9DEF82}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Cce.h" />
@@ -31,23 +34,39 @@
     <ClInclude Include="src\cce\Events\MouseEvent.h">
       <Filter>cce\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\cce\Layer.h">
+      <Filter>cce</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cce\LayerStack.h">
+      <Filter>cce</Filter>
+    </ClInclude>
     <ClInclude Include="src\cce\Log.h">
       <Filter>cce</Filter>
     </ClInclude>
-    <ClInclude Include="src\ccepch.h" />
     <ClInclude Include="src\cce\Window.h">
       <Filter>cce</Filter>
     </ClInclude>
-    <ClInclude Include="src\cce\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\cce\Windows\WindowsWindow.h">
+      <Filter>cce\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ccepch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\cce\Application.cpp">
       <Filter>cce</Filter>
     </ClCompile>
+    <ClCompile Include="src\cce\Layer.cpp">
+      <Filter>cce</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cce\LayerStack.cpp">
+      <Filter>cce</Filter>
+    </ClCompile>
     <ClCompile Include="src\cce\Log.cpp">
       <Filter>cce</Filter>
     </ClCompile>
+    <ClCompile Include="src\cce\Windows\WindowsWindow.cpp">
+      <Filter>cce\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\ccepch.cpp" />
-    <ClCompile Include="src\cce\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

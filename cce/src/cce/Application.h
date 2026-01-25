@@ -14,7 +14,7 @@ namespace Cce {
 	{
 	public:
 		Application();
-		virtual ~Application(); 
+		virtual ~Application();
 
 		void Run();
 
@@ -23,6 +23,9 @@ namespace Cce {
 		void pushLayer(Layer* layer);
 		void pushOverlay(Layer* layer);
 
+		inline static Application& getApplication() { return *s_Instance; }
+		inline Window& getWindow() { return *m_Window; }
+
 	private:
 		bool onWindowClose(WindowCloseEvent& e);
 
@@ -30,6 +33,8 @@ namespace Cce {
 
 		bool m_Running = true;
 		LayerStack m_LayerStack;
+
+		static Application* s_Instance;
 	};
 
 	// to be defined in client

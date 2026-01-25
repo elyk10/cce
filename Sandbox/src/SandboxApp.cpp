@@ -11,7 +11,7 @@ public:
 
 	void onUpdate() override
 	{
-		CCE_INFO("ExampleLayer::Update");
+		//CCE_INFO("ExampleLayer::Update");
 	}
 
 	void onEvent(Cce::Event& event) override
@@ -26,6 +26,7 @@ public:
 	Sandbox()
 	{
 		pushLayer(new ExampleLayer());
+		pushOverlay(new Cce::ImGuiLayer());
 	}
 
 	~Sandbox()

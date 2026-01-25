@@ -80,7 +80,7 @@
       <PrecompiledHeaderFile>ccepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CCE_PLATFORM_WINDOWS;CCE_BUILD_DLL;GLFW_INCLUDE_NONE;CCE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -104,7 +104,7 @@
       <PrecompiledHeaderFile>ccepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CCE_PLATFORM_WINDOWS;CCE_BUILD_DLL;GLFW_INCLUDE_NONE;CCE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -132,7 +132,7 @@
       <PrecompiledHeaderFile>ccepch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>CCE_PLATFORM_WINDOWS;CCE_BUILD_DLL;GLFW_INCLUDE_NONE;CCE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -166,8 +166,11 @@
     <ClInclude Include="src\cce\Layer.h" />
     <ClInclude Include="src\cce\LayerStack.h" />
     <ClInclude Include="src\cce\Log.h" />
+    <ClInclude Include="src\cce\Platfrom\OpenGl\ImGuiOpenGlRenderer.h" />
+    <ClInclude Include="src\cce\Platfrom\OpenGl\imgui_impl_opengl3_loader.h" />
+    <ClInclude Include="src\cce\Platfrom\Windows\WindowsWindow.h" />
     <ClInclude Include="src\cce\Window.h" />
-    <ClInclude Include="src\cce\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\cce\imgui\ImGuiLayer.h" />
     <ClInclude Include="src\ccepch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -175,7 +178,9 @@
     <ClCompile Include="src\cce\Layer.cpp" />
     <ClCompile Include="src\cce\LayerStack.cpp" />
     <ClCompile Include="src\cce\Log.cpp" />
-    <ClCompile Include="src\cce\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\cce\Platfrom\OpenGl\ImGuiOpenGlRenderer.cpp" />
+    <ClCompile Include="src\cce\Platfrom\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\cce\imgui\ImGuiLayer.cpp" />
     <ClCompile Include="src\ccepch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -186,6 +191,9 @@
     </ProjectReference>
     <ProjectReference Include="vendor\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

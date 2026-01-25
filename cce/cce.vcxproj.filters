@@ -7,8 +7,17 @@
     <Filter Include="cce\Events">
       <UniqueIdentifier>{145B52D3-0013-9420-691A-6D7C55F12E11}</UniqueIdentifier>
     </Filter>
-    <Filter Include="cce\Windows">
-      <UniqueIdentifier>{6A3F8089-D6F4-F87E-5FE9-F255CB9DEF82}</UniqueIdentifier>
+    <Filter Include="cce\Platfrom">
+      <UniqueIdentifier>{E483730D-D0E6-02B2-796C-3B6865AECE34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cce\Platfrom\OpenGl">
+      <UniqueIdentifier>{B864000B-24C6-DD18-AD33-24CB199414D8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cce\Platfrom\Windows">
+      <UniqueIdentifier>{1ED228C3-0A61-B28C-B37F-C6879FEDC232}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cce\imgui">
+      <UniqueIdentifier>{9A96B72F-0601-6CA6-4F3F-1D4CBBE849FB}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -43,11 +52,20 @@
     <ClInclude Include="src\cce\Log.h">
       <Filter>cce</Filter>
     </ClInclude>
+    <ClInclude Include="src\cce\Platfrom\OpenGl\ImGuiOpenGlRenderer.h">
+      <Filter>cce\Platfrom\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cce\Platfrom\OpenGl\imgui_impl_opengl3_loader.h">
+      <Filter>cce\Platfrom\OpenGl</Filter>
+    </ClInclude>
+    <ClInclude Include="src\cce\Platfrom\Windows\WindowsWindow.h">
+      <Filter>cce\Platfrom\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\cce\Window.h">
       <Filter>cce</Filter>
     </ClInclude>
-    <ClInclude Include="src\cce\Windows\WindowsWindow.h">
-      <Filter>cce\Windows</Filter>
+    <ClInclude Include="src\cce\imgui\ImGuiLayer.h">
+      <Filter>cce\imgui</Filter>
     </ClInclude>
     <ClInclude Include="src\ccepch.h" />
   </ItemGroup>
@@ -64,8 +82,14 @@
     <ClCompile Include="src\cce\Log.cpp">
       <Filter>cce</Filter>
     </ClCompile>
-    <ClCompile Include="src\cce\Windows\WindowsWindow.cpp">
-      <Filter>cce\Windows</Filter>
+    <ClCompile Include="src\cce\Platfrom\OpenGl\ImGuiOpenGlRenderer.cpp">
+      <Filter>cce\Platfrom\OpenGl</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cce\Platfrom\Windows\WindowsWindow.cpp">
+      <Filter>cce\Platfrom\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cce\imgui\ImGuiLayer.cpp">
+      <Filter>cce\imgui</Filter>
     </ClCompile>
     <ClCompile Include="src\ccepch.cpp" />
   </ItemGroup>
